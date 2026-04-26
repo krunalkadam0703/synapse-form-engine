@@ -100,4 +100,37 @@ export interface ISynapseConfig {
 export type SynapseRegistry = Record<string, React.ComponentType<any>>;
 
 
+/**
+ * 9. Broker Event Map
+ * Defines every type of "Pulse" that can travel through the engine.
+ */
+export type BrokerEvents = {
+  // Triggered whenever a user types or selects a value
+  'field:change': {
+    fieldId: string;
+    value: unknown;
+  };
 
+  // Triggered to clear a field's value or error
+  'field:reset': {
+    fieldId: string;
+  };
+
+  // Triggered when a calculation needs to run
+  'calc:trigger': {
+    calcId: string;
+    inputs: Record<string, unknown>;
+  };
+
+  // Triggered to start an API request for dynamic options
+  'api:fetch': {
+    fetcherId: string;
+    params: Record<string, unknown>;
+  };
+
+  // Triggered when an API request successfully returns data
+  'api:response': {
+    fetcherId: string;
+    data: unknown;
+  };
+};
