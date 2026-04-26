@@ -134,3 +134,12 @@ export type BrokerEvents = {
     data: unknown;
   };
 };
+
+export type DependencyType = 'calculation' | 'api';
+
+export type DependencyNode = {
+  targetFieldId: string;
+  type: DependencyType;
+};
+
+export type DependencyMap = Record<string, DependencyNode[]>;
