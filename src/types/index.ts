@@ -59,6 +59,19 @@ export interface IFieldOptions {
   };
 }
 
+export interface ICrossField {
+  targetId: string;   // The field being observed or compared to
+  operator?: '>' | '<' | '>=' | '<=' | '==' | '!='; // For Validation
+  formula?: string;   // For Calculation (if you want it defined here)
+  message?: string;   // Error message for validation failures
+}
+
+export interface IFieldValidation {
+  rule: 'required' | 'min' | 'max' | 'minLength' | 'maxLength' | 'regex' | 'email' | 'url' | 'uuid';
+  value?: any;
+  message?: string;
+}
+
 /**
  * 5. Field Configuration
  * The primary blueprint for an individual form field.
@@ -74,6 +87,7 @@ export interface IFieldConfig {
   validation?: IFieldValidation[];
   calculation?: IFieldCalculation;
   remoteSource?: IRemoteSource;
+  crossField?: ICrossField[];
 }
 
 /**
