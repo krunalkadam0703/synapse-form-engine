@@ -30,8 +30,6 @@ export const SynapseProvider: React.FC<SynapseProviderProps> = ({
     schema: ValidatorResolver.buildSchema(config.fields),
     dependencyMap: DependencyIndexer.build(config.fields)
   }), [config.fields]);
-  console.log("schema", schema);
-  console.log("dependencyMap", dependencyMap);
 
   // 2. Setup React Hook Form
   const methods = useForm({

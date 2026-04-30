@@ -45,4 +45,44 @@ describe('ValidatorResolver (Cross-field Guard)', () => {
     // Should pass even if the field is missing from data
     expect(schema.safeParse({}).success).toBe(true);
   });
+
+  it('should enforce minLength and required for text fields', () => {
+    const config: ISynapseConfig = {
+      formMeta: { formId: 'Text Rules', version: '1.0' },
+      fields: [
+        {
+          id: 'doctor_name',
+          type: 'text',
+          label: 'Doctor Name',
+          validation: [
+            { rule: 'required', message: 'Doctor is required' },
+            { rule: 'minLength', value: 3, message: 'Min 3 chars' },
+          ],
+        },
+      ],
+    };
+
+    const schema = ValidatorResolver.buildSchema(config.fields);
+    expect(schema.safeParse({ doctor_name: '' }).success).toBe(false);
+    expect(schema.safeParse({ doctor_name: 'Dr' }).success).toBe(false);
+    expect(schema.safeParse({ doctor_name: 'Dr A' }).success).toBe(true);
+  });
+
+  it('should enforce email rule', () => {
+    const config: ISynapseConfig = {
+      formMeta: { formId: 'Email Rules', version: '1.0' },
+      fields: [
+        {
+          id: 'contact_email',
+          type: 'text',
+          label: 'Contact Email',
+          validation: [{ rule: 'email', message: 'Invalid email format' }],
+        },
+      ],
+    };
+
+    const schema = ValidatorResolver.buildSchema(config.fields);
+    expect(schema.safeParse({ contact_email: 'not-an-email' }).success).toBe(false);
+    expect(schema.safeParse({ contact_email: 'test@example.com' }).success).toBe(true);
+  });
 });

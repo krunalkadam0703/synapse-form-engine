@@ -46,7 +46,6 @@ export const useRemoteSource = (fieldId: string, remote?: IRemoteSource) => {
         throw new Error(`HTTP ${res.status} while fetching ${url.toString()}`);
       }
       const json = await res.json();
-      console.log(`[Synapse API] field=${fieldId} method=${remote.method} url=${url.toString()}`, json);
       const rawData = remote.dataKey ? json[remote.dataKey] : json;
 
       // 🔹 2. HANDLE JSON-SERVER ARRAY WRAPPER
@@ -63,6 +62,11 @@ export const useRemoteSource = (fieldId: string, remote?: IRemoteSource) => {
               setValue(targetFieldId, newValue, { 
                 shouldValidate: true, 
                 shouldDirty: true 
+              });
+              // Keep orchestration consistent: calculations/effects listen on field:change.
+              Broker.emit('field:change', {
+                fieldId: targetFieldId,
+                value: newValue
               });
             }
           });

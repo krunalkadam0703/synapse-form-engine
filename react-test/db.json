@@ -1,60 +1,90 @@
 {
   "patients": [
-    { "id": "P101", "full_name": "Krunal Kadam", "age": 28, "dept": "CARD", "email": "krunal@ssk.com", "city": "Pune", "gender": "M", "priority": "high", "height": 172, "weight": 74 },
-    { "id": "P102", "full_name": "Riya Sharma", "age": 31, "dept": "NEUR", "email": "riya.sharma@demo.com", "city": "Mumbai", "gender": "F", "priority": "medium", "height": 163, "weight": 58 },
-    { "id": "P103", "full_name": "Aman Verma", "age": 26, "dept": "ORTH", "email": "aman.verma@demo.com", "city": "Delhi", "gender": "M", "priority": "low", "height": 178, "weight": 82 },
-    { "id": "P104", "full_name": "Sneha Patil", "age": 42, "dept": "DERM", "email": "sneha.patil@demo.com", "city": "Nagpur", "gender": "F", "priority": "high", "height": 159, "weight": 64 },
-    { "id": "P105", "full_name": "Rahul Nair", "age": 37, "dept": "GAST", "email": "rahul.nair@demo.com", "city": "Bengaluru", "gender": "M", "priority": "medium", "height": 175, "weight": 79 },
-    { "id": "P106", "full_name": "Isha Kulkarni", "age": 24, "dept": "ENT", "email": "isha.k@demo.com", "city": "Pune", "gender": "F", "priority": "low", "height": 161, "weight": 52 },
-    { "id": "P107", "full_name": "Sahil Gupta", "age": 29, "dept": "CARD", "email": "sahil.gupta@demo.com", "city": "Indore", "gender": "M", "priority": "medium", "height": 181, "weight": 77 },
-    { "id": "P108", "full_name": "Meera Joshi", "age": 46, "dept": "ENDO", "email": "meera.j@demo.com", "city": "Nashik", "gender": "F", "priority": "high", "height": 156, "weight": 69 },
-    { "id": "P109", "full_name": "Dev Malhotra", "age": 33, "dept": "PSYC", "email": "dev.m@demo.com", "city": "Jaipur", "gender": "M", "priority": "medium", "height": 174, "weight": 73 },
-    { "id": "P110", "full_name": "Anaya Rao", "age": 27, "dept": "NEUR", "email": "anaya.rao@demo.com", "city": "Hyderabad", "gender": "F", "priority": "low", "height": 165, "weight": 57 },
-    { "id": "P111", "full_name": "Harsh Singh", "age": 52, "dept": "ORTH", "email": "harsh.s@demo.com", "city": "Lucknow", "gender": "M", "priority": "high", "height": 169, "weight": 81 },
-    { "id": "P112", "full_name": "Kavya Menon", "age": 35, "dept": "DERM", "email": "kavya.m@demo.com", "city": "Kochi", "gender": "F", "priority": "medium", "height": 162, "weight": 60 },
-    { "id": "P113", "full_name": "Nitin Bhat", "age": 40, "dept": "GAST", "email": "nitin.b@demo.com", "city": "Surat", "gender": "M", "priority": "high", "height": 177, "weight": 85 },
-    { "id": "P114", "full_name": "Priya Iyer", "age": 30, "dept": "ENT", "email": "priya.iyer@demo.com", "city": "Chennai", "gender": "F", "priority": "medium", "height": 160, "weight": 55 },
-    { "id": "P115", "full_name": "Vikram Deshmukh", "age": 45, "dept": "CARD", "email": "vikram.d@demo.com", "city": "Pune", "gender": "M", "priority": "high", "height": 173, "weight": 83 },
-    { "id": "P116", "full_name": "Tanvi Shah", "age": 22, "dept": "ENDO", "email": "tanvi.shah@demo.com", "city": "Ahmedabad", "gender": "F", "priority": "low", "height": 158, "weight": 51 },
-    { "id": "P117", "full_name": "Arjun Kapoor", "age": 39, "dept": "PSYC", "email": "arjun.k@demo.com", "city": "Delhi", "gender": "M", "priority": "medium", "height": 180, "weight": 78 },
-    { "id": "P118", "full_name": "Neha Chawla", "age": 34, "dept": "NEUR", "email": "neha.c@demo.com", "city": "Noida", "gender": "F", "priority": "medium", "height": 164, "weight": 59 },
-    { "id": "P119", "full_name": "Rohit Shetty", "age": 47, "dept": "ORTH", "email": "rohit.s@demo.com", "city": "Mumbai", "gender": "M", "priority": "high", "height": 176, "weight": 88 },
-    { "id": "P120", "full_name": "Aditi Kul", "age": 28, "dept": "DERM", "email": "aditi.k@demo.com", "city": "Pune", "gender": "F", "priority": "low", "height": 166, "weight": 56 }
+    { "id": "P101", "full_name": "Krunal Kadam", "email": "krunal@demo.com", "age": 28, "height": 172, "weight": 74, "insurancePlan": "GOLD" },
+    { "id": "P102", "full_name": "Riya Sharma", "email": "riya@demo.com", "age": 31, "height": 163, "weight": 58, "insurancePlan": "SILVER" },
+    { "id": "P103", "full_name": "Aman Verma", "email": "aman@demo.com", "age": 26, "height": 178, "weight": 82, "insurancePlan": "PLATINUM" },
+    { "id": "P104", "full_name": "Sneha Patil", "email": "sneha@demo.com", "age": 42, "height": 159, "weight": 64, "insurancePlan": "GOLD" },
+    { "id": "P105", "full_name": "Rahul Nair", "email": "rahul@demo.com", "age": 37, "height": 175, "weight": 79, "insurancePlan": "SILVER" }
+  ],
+  "countries": [
+    { "id": "IN", "name": "India" },
+    { "id": "US", "name": "United States" }
+  ],
+  "states": [
+    { "id": "MH", "name": "Maharashtra", "countryId": "IN" },
+    { "id": "KA", "name": "Karnataka", "countryId": "IN" },
+    { "id": "CA", "name": "California", "countryId": "US" },
+    { "id": "TX", "name": "Texas", "countryId": "US" }
+  ],
+  "cities": [
+    { "id": "PUNE", "name": "Pune", "stateId": "MH" },
+    { "id": "MUMBAI", "name": "Mumbai", "stateId": "MH" },
+    { "id": "BLR", "name": "Bengaluru", "stateId": "KA" },
+    { "id": "SFO", "name": "San Francisco", "stateId": "CA" },
+    { "id": "AUS", "name": "Austin", "stateId": "TX" }
+  ],
+  "hospitals": [
+    { "id": "HSP-PUNE-1", "name": "Pune Prime Care", "cityId": "PUNE" },
+    { "id": "HSP-MUM-1", "name": "Mumbai Central Health", "cityId": "MUMBAI" },
+    { "id": "HSP-BLR-1", "name": "Bengaluru Medisphere", "cityId": "BLR" },
+    { "id": "HSP-SFO-1", "name": "Bay Area Hospital", "cityId": "SFO" },
+    { "id": "HSP-AUS-1", "name": "Austin City Hospital", "cityId": "AUS" }
   ],
   "departments": [
-    { "id": "CARD", "name": "Cardiology", "floor": 2 },
-    { "id": "NEUR", "name": "Neurology", "floor": 3 },
-    { "id": "ORTH", "name": "Orthopedics", "floor": 4 },
-    { "id": "DERM", "name": "Dermatology", "floor": 1 },
-    { "id": "GAST", "name": "Gastroenterology", "floor": 5 },
-    { "id": "ENT", "name": "ENT", "floor": 2 },
-    { "id": "ENDO", "name": "Endocrinology", "floor": 6 },
-    { "id": "PSYC", "name": "Psychiatry", "floor": 7 }
+    { "id": "CARD-PUNE", "name": "Cardiology", "hospitalId": "HSP-PUNE-1" },
+    { "id": "NEUR-PUNE", "name": "Neurology", "hospitalId": "HSP-PUNE-1" },
+    { "id": "ORTH-MUM", "name": "Orthopedics", "hospitalId": "HSP-MUM-1" },
+    { "id": "DERM-MUM", "name": "Dermatology", "hospitalId": "HSP-MUM-1" },
+    { "id": "GAST-BLR", "name": "Gastroenterology", "hospitalId": "HSP-BLR-1" },
+    { "id": "ENT-BLR", "name": "ENT", "hospitalId": "HSP-BLR-1" },
+    { "id": "CARD-SFO", "name": "Cardiology", "hospitalId": "HSP-SFO-1" },
+    { "id": "NEUR-AUS", "name": "Neurology", "hospitalId": "HSP-AUS-1" }
   ],
   "doctors": [
-    { "id": "D001", "doc_name": "Dr. Arshad", "dept": "CARD", "experience": 12, "shift": "morning", "rating": 4.7 },
-    { "id": "D002", "doc_name": "Dr. Patil", "dept": "CARD", "experience": 9, "shift": "evening", "rating": 4.5 },
-    { "id": "D003", "doc_name": "Dr. Nanda", "dept": "CARD", "experience": 15, "shift": "morning", "rating": 4.8 },
-    { "id": "D004", "doc_name": "Dr. Mehta", "dept": "NEUR", "experience": 11, "shift": "morning", "rating": 4.6 },
-    { "id": "D005", "doc_name": "Dr. Rao", "dept": "NEUR", "experience": 7, "shift": "night", "rating": 4.4 },
-    { "id": "D006", "doc_name": "Dr. Fernandes", "dept": "NEUR", "experience": 13, "shift": "evening", "rating": 4.7 },
-    { "id": "D007", "doc_name": "Dr. Kulkarni", "dept": "ORTH", "experience": 10, "shift": "morning", "rating": 4.3 },
-    { "id": "D008", "doc_name": "Dr. Salunkhe", "dept": "ORTH", "experience": 14, "shift": "evening", "rating": 4.6 },
-    { "id": "D009", "doc_name": "Dr. Bendre", "dept": "ORTH", "experience": 8, "shift": "night", "rating": 4.2 },
-    { "id": "D010", "doc_name": "Dr. Joshi", "dept": "DERM", "experience": 6, "shift": "morning", "rating": 4.1 },
-    { "id": "D011", "doc_name": "Dr. Shah", "dept": "DERM", "experience": 9, "shift": "evening", "rating": 4.4 },
-    { "id": "D012", "doc_name": "Dr. Gokhale", "dept": "DERM", "experience": 16, "shift": "morning", "rating": 4.9 },
-    { "id": "D013", "doc_name": "Dr. Naik", "dept": "GAST", "experience": 11, "shift": "night", "rating": 4.5 },
-    { "id": "D014", "doc_name": "Dr. Thomas", "dept": "GAST", "experience": 5, "shift": "evening", "rating": 4.0 },
-    { "id": "D015", "doc_name": "Dr. Shelar", "dept": "GAST", "experience": 13, "shift": "morning", "rating": 4.6 },
-    { "id": "D016", "doc_name": "Dr. Dsouza", "dept": "ENT", "experience": 10, "shift": "morning", "rating": 4.3 },
-    { "id": "D017", "doc_name": "Dr. Purohit", "dept": "ENT", "experience": 8, "shift": "evening", "rating": 4.2 },
-    { "id": "D018", "doc_name": "Dr. Jadhav", "dept": "ENT", "experience": 12, "shift": "night", "rating": 4.5 },
-    { "id": "D019", "doc_name": "Dr. Malviya", "dept": "ENDO", "experience": 7, "shift": "morning", "rating": 4.1 },
-    { "id": "D020", "doc_name": "Dr. Iqbal", "dept": "ENDO", "experience": 15, "shift": "evening", "rating": 4.8 },
-    { "id": "D021", "doc_name": "Dr. Kannan", "dept": "ENDO", "experience": 9, "shift": "night", "rating": 4.4 },
-    { "id": "D022", "doc_name": "Dr. Bhatia", "dept": "PSYC", "experience": 17, "shift": "morning", "rating": 4.9 },
-    { "id": "D023", "doc_name": "Dr. Roy", "dept": "PSYC", "experience": 6, "shift": "evening", "rating": 4.1 },
-    { "id": "D024", "doc_name": "Dr. Nayak", "dept": "PSYC", "experience": 10, "shift": "night", "rating": 4.4 }
+    { "id": "D001", "doc_name": "Dr. Arshad", "departmentId": "CARD-PUNE", "fee": 1200 },
+    { "id": "D002", "doc_name": "Dr. Patil", "departmentId": "CARD-PUNE", "fee": 1400 },
+    { "id": "D003", "doc_name": "Dr. Mehta", "departmentId": "NEUR-PUNE", "fee": 1600 },
+    { "id": "D004", "doc_name": "Dr. Salunkhe", "departmentId": "ORTH-MUM", "fee": 1500 },
+    { "id": "D005", "doc_name": "Dr. Shah", "departmentId": "DERM-MUM", "fee": 900 },
+    { "id": "D006", "doc_name": "Dr. Naik", "departmentId": "GAST-BLR", "fee": 1300 },
+    { "id": "D007", "doc_name": "Dr. Jadhav", "departmentId": "ENT-BLR", "fee": 1100 },
+    { "id": "D008", "doc_name": "Dr. Cooper", "departmentId": "CARD-SFO", "fee": 2200 },
+    { "id": "D009", "doc_name": "Dr. Adams", "departmentId": "NEUR-AUS", "fee": 2400 }
+  ],
+  "slots": [
+    { "id": "S1", "time": "09:00 AM", "doctorId": "D001" },
+    { "id": "S2", "time": "10:00 AM", "doctorId": "D001" },
+    { "id": "S3", "time": "11:30 AM", "doctorId": "D003" },
+    { "id": "S4", "time": "02:00 PM", "doctorId": "D004" },
+    { "id": "S5", "time": "04:00 PM", "doctorId": "D006" },
+    { "id": "S6", "time": "05:30 PM", "doctorId": "D008" }
+  ],
+  "labs": [
+    { "id": "LAB-PUNE-1", "name": "Prime Diagnostics Pune", "hospitalId": "HSP-PUNE-1" },
+    { "id": "LAB-MUM-1", "name": "Metro Labs Mumbai", "hospitalId": "HSP-MUM-1" },
+    { "id": "LAB-BLR-1", "name": "City Labs Bengaluru", "hospitalId": "HSP-BLR-1" },
+    { "id": "LAB-SFO-1", "name": "Bay Labs", "hospitalId": "HSP-SFO-1" }
+  ],
+  "testPackages": [
+    { "id": "TP1", "name": "Basic Blood Panel", "labId": "LAB-PUNE-1", "price": 1200 },
+    { "id": "TP2", "name": "Cardiac Profile", "labId": "LAB-PUNE-1", "price": 2600 },
+    { "id": "TP3", "name": "Thyroid Profile", "labId": "LAB-MUM-1", "price": 1800 },
+    { "id": "TP4", "name": "Liver Function Test", "labId": "LAB-BLR-1", "price": 2100 },
+    { "id": "TP5", "name": "Advanced Wellness", "labId": "LAB-SFO-1", "price": 4200 }
+  ],
+  "medications": [
+    { "id": "M1", "name": "CardioSafe", "departmentId": "CARD-PUNE", "price": 850 },
+    { "id": "M2", "name": "NeuroCalm", "departmentId": "NEUR-PUNE", "price": 950 },
+    { "id": "M3", "name": "OrthoRelief", "departmentId": "ORTH-MUM", "price": 700 },
+    { "id": "M4", "name": "DermaCare", "departmentId": "DERM-MUM", "price": 500 },
+    { "id": "M5", "name": "GastroEase", "departmentId": "GAST-BLR", "price": 650 },
+    { "id": "M6", "name": "ENTClear", "departmentId": "ENT-BLR", "price": 480 },
+    { "id": "M7", "name": "CardioMax", "departmentId": "CARD-SFO", "price": 1100 },
+    { "id": "M8", "name": "NeuroShield", "departmentId": "NEUR-AUS", "price": 1300 }
+  ],
+  "insurances": [
+    { "id": "I1", "plan": "GOLD", "coverPercent": 70 },
+    { "id": "I2", "plan": "SILVER", "coverPercent": 50 },
+    { "id": "I3", "plan": "PLATINUM", "coverPercent": 85 }
   ]
 }

@@ -6,7 +6,6 @@ export class DependencyIndexer {
 
   public static build(fields: IFieldConfig[]): DependencyMap {
     const map: DependencyMap = {};
-    debugger;
 
     const add = (sourceId: string, targetId: string, type: 'calculation' | 'api') => {
       if (!map[sourceId]) map[sourceId] = [];
@@ -38,9 +37,7 @@ export class DependencyIndexer {
           add(legacyParam, field.id, 'api');
         }
       }
-    }); // End of fields.forEach
-
-    console.log('DependencyMap', map);
+    });
     return map;
   }
 }
