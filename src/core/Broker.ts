@@ -16,10 +16,12 @@ class TypedBroker{
 
     emit<k extends keyof BrokerEvents>(event: k, payload: BrokerEvents[k]): void {
         this.emitter.emit(event, payload);
+        console.log('Emitting', event, payload);
     }
     
     on<k extends keyof BrokerEvents>(event: k, listener: (payload: BrokerEvents[k]) => void): void {
         this.emitter.on(event, listener);
+        console.log('Subscribing to', event, listener);
     }   
 
     off<k extends keyof BrokerEvents>(event: k, listener: (payload: BrokerEvents[k]) => void): void {
@@ -28,7 +30,10 @@ class TypedBroker{
     
     subscribe<k extends keyof BrokerEvents>(event: k, listener: (payload: BrokerEvents[k]) => void): () => void {
         this.on(event, listener);
-        return () => this.off(event, listener);
+        return () => {
+            this.off(event, listener);
+            console.log('Unsubscribing from', event, listener);
+        };
     }
 
     clear (): void {

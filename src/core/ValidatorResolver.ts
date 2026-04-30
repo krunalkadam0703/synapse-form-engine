@@ -55,17 +55,58 @@ export class ValidatorResolver {
   }
 
   private static applyRule(validator: AnyZod, rule: IFieldValidation): AnyZod {
-    const msg = rule.message ? { message: rule.message } : undefined;
+    const message = rule.message;
     const val = rule.value;
     switch (rule.rule) {
       case 'required':
-        return (validator instanceof z.ZodString) ? validator.min(1, msg || "Required") : validator;
+        return validator.refine(
+          (v) => v !== undefined && v !== null && v !== '',
+          message || 'Required'
+        );
       case 'min':
-        if (validator instanceof z.ZodNumber) return validator.min(Number(val), msg);
-        return validator;
+        return validator.refine(
+          (v) => v === undefined || v === null || v === '' || Number(v) >= Number(val),
+          message || `Must be at least ${val}`
+        );
       case 'max':
-        if (validator instanceof z.ZodNumber) return validator.max(Number(val), msg);
-        return validator;
+        return validator.refine(
+          (v) => v === undefined || v === null || v === '' || Number(v) <= Number(val),
+          message || `Must be at most ${val}`
+        );
+      case 'minLength':
+        return validator.refine(
+          (v) => v === undefined || v === null || String(v).length >= Number(val),
+          message || `Must be at least ${val} characters`
+        );
+      case 'maxLength':
+        return validator.refine(
+          (v) => v === undefined || v === null || String(v).length <= Number(val),
+          message || `Must be at most ${val} characters`
+        );
+      case 'email':
+        return validator.refine(
+          (v) => v === undefined || v === null || v === '' || z.string().email().safeParse(String(v)).success,
+          message || 'Must be a valid email'
+        );
+      case 'url':
+        return validator.refine(
+          (v) => v === undefined || v === null || v === '' || z.string().url().safeParse(String(v)).success,
+          message || 'Must be a valid URL'
+        );
+      case 'uuid':
+        return validator.refine(
+          (v) => v === undefined || v === null || v === '' || z.string().uuid().safeParse(String(v)).success,
+          message || 'Must be a valid UUID'
+        );
+      case 'regex':
+        return validator.refine(
+          (v) => {
+            if (v === undefined || v === null || v === '') return true;
+            if (!(val instanceof RegExp)) return true;
+            return val.test(String(v));
+          },
+          message || 'Invalid format'
+        );
       default: return validator;
     }
   }

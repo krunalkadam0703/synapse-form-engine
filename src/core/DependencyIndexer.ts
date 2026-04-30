@@ -15,17 +15,29 @@ export class DependencyIndexer {
     };
 
     fields.forEach((field) => {
-      // Index math dependencies
+      // 1. Index Math Dependencies (Formula Parsing)
       if (field.calculation?.formula) {
         const sources = this.engine.getVariables(field.calculation.formula);
         sources.forEach(src => add(src, field.id, 'calculation'));
       }
-      // Index API dependencies
-      if (field.options?.source === 'remote' && field.options.remote?.queryParam) {
-        add(field.options.remote.queryParam, field.id, 'api');
+
+      // 2. Index API Dependencies (Multi-Param & Legacy support)
+      const remote = field.remoteSource;
+      if (remote) {
+        // Multi-dependency support: record format { "apiParam": "fieldId" }
+        if (remote.queryParams) {
+          Object.values(remote.queryParams).forEach((sourceFieldId) => {
+            add(sourceFieldId, field.id, 'api');
+          });
+        }
+        
+        // Legacy support for single queryParam if it exists on the object
+        const legacyParam = (remote as any).queryParam;
+        if (legacyParam) {
+          add(legacyParam, field.id, 'api');
+        }
       }
     });
-
     return map;
   }
 }

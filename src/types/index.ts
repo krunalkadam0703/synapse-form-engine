@@ -1,4 +1,4 @@
-import React from 'react';
+
 
 /**
  * 1. Validation Logic
@@ -15,7 +15,7 @@ export interface IFieldValidation {
     | 'regex' 
     | 'minLength' 
     | 'maxLength';
-  value?: any;      // Constraint value (e.g., 10 for maxLength)
+  value?: unknown;      // Constraint value (e.g., 10 for maxLength)
   message?: string; // Custom error message displayed in UI
 }
 
@@ -34,14 +34,14 @@ export interface IFieldCalculation {
 export interface IRemoteSource {
   url: string;
   method: 'GET' | 'POST';
-  /** * The ID of the field whose value should be sent as a parameter.
-   * Example: 'departmentId'
-   */
+  // 🔹 Ensure this is plural and defined as a Record
+  queryParams?: Record<string, string>; 
+  dataKey?: string;
+  labelKey?: string;
+  valueKey?: string;
+  onSuccess?: Record<string, string>;
+  // Keep this if you want backward compatibility, or remove it to force the new way
   queryParam?: string; 
-  /** * The key in the JSON response containing the data.
-   * Example: 'results' or 'data'
-   */
-  dataKey?: string;    
 }
 
 /**
@@ -74,12 +74,6 @@ export interface ICrossField {
   message?: string;   // Error message for validation failures
 }
 
-export interface IFieldValidation {
-  rule: 'required' | 'min' | 'max' | 'minLength' | 'maxLength' | 'regex' | 'email' | 'url' | 'uuid';
-  value?: any;
-  message?: string;
-}
-
 /**
  * 5. Field Configuration
  * The primary blueprint for an individual form field.
@@ -89,7 +83,7 @@ export interface IFieldConfig {
   type: string;        // e.g., "text", "number", "select", "combobox"
   label: string;
   placeholder?: string;
-  defaultValue?: any;
+  defaultValue?: unknown;
   readOnly?: boolean;
   options?: IFieldOptions; // Handles the List of Dictionaries (Static or Remote)
   validation?: IFieldValidation[];
@@ -127,7 +121,7 @@ export type SynapseRegistry = Record<string, React.ComponentType<any>>;
  * Defines every type of "Pulse" that can travel through the engine.
  */
 export interface IApiFetchPayload {
-  triggerValue: any;
+  triggerValue: unknown;
 }
 
 export type BrokerEvents = {

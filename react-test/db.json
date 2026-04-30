@@ -1,0 +1,90 @@
+{
+  "patients": [
+    { "id": "P101", "full_name": "Krunal Kadam", "email": "krunal@demo.com", "age": 28, "height": 172, "weight": 74, "insurancePlan": "GOLD" },
+    { "id": "P102", "full_name": "Riya Sharma", "email": "riya@demo.com", "age": 31, "height": 163, "weight": 58, "insurancePlan": "SILVER" },
+    { "id": "P103", "full_name": "Aman Verma", "email": "aman@demo.com", "age": 26, "height": 178, "weight": 82, "insurancePlan": "PLATINUM" },
+    { "id": "P104", "full_name": "Sneha Patil", "email": "sneha@demo.com", "age": 42, "height": 159, "weight": 64, "insurancePlan": "GOLD" },
+    { "id": "P105", "full_name": "Rahul Nair", "email": "rahul@demo.com", "age": 37, "height": 175, "weight": 79, "insurancePlan": "SILVER" }
+  ],
+  "countries": [
+    { "id": "IN", "name": "India" },
+    { "id": "US", "name": "United States" }
+  ],
+  "states": [
+    { "id": "MH", "name": "Maharashtra", "countryId": "IN" },
+    { "id": "KA", "name": "Karnataka", "countryId": "IN" },
+    { "id": "CA", "name": "California", "countryId": "US" },
+    { "id": "TX", "name": "Texas", "countryId": "US" }
+  ],
+  "cities": [
+    { "id": "PUNE", "name": "Pune", "stateId": "MH" },
+    { "id": "MUMBAI", "name": "Mumbai", "stateId": "MH" },
+    { "id": "BLR", "name": "Bengaluru", "stateId": "KA" },
+    { "id": "SFO", "name": "San Francisco", "stateId": "CA" },
+    { "id": "AUS", "name": "Austin", "stateId": "TX" }
+  ],
+  "hospitals": [
+    { "id": "HSP-PUNE-1", "name": "Pune Prime Care", "cityId": "PUNE" },
+    { "id": "HSP-MUM-1", "name": "Mumbai Central Health", "cityId": "MUMBAI" },
+    { "id": "HSP-BLR-1", "name": "Bengaluru Medisphere", "cityId": "BLR" },
+    { "id": "HSP-SFO-1", "name": "Bay Area Hospital", "cityId": "SFO" },
+    { "id": "HSP-AUS-1", "name": "Austin City Hospital", "cityId": "AUS" }
+  ],
+  "departments": [
+    { "id": "CARD-PUNE", "name": "Cardiology", "hospitalId": "HSP-PUNE-1" },
+    { "id": "NEUR-PUNE", "name": "Neurology", "hospitalId": "HSP-PUNE-1" },
+    { "id": "ORTH-MUM", "name": "Orthopedics", "hospitalId": "HSP-MUM-1" },
+    { "id": "DERM-MUM", "name": "Dermatology", "hospitalId": "HSP-MUM-1" },
+    { "id": "GAST-BLR", "name": "Gastroenterology", "hospitalId": "HSP-BLR-1" },
+    { "id": "ENT-BLR", "name": "ENT", "hospitalId": "HSP-BLR-1" },
+    { "id": "CARD-SFO", "name": "Cardiology", "hospitalId": "HSP-SFO-1" },
+    { "id": "NEUR-AUS", "name": "Neurology", "hospitalId": "HSP-AUS-1" }
+  ],
+  "doctors": [
+    { "id": "D001", "doc_name": "Dr. Arshad", "departmentId": "CARD-PUNE", "fee": 1200 },
+    { "id": "D002", "doc_name": "Dr. Patil", "departmentId": "CARD-PUNE", "fee": 1400 },
+    { "id": "D003", "doc_name": "Dr. Mehta", "departmentId": "NEUR-PUNE", "fee": 1600 },
+    { "id": "D004", "doc_name": "Dr. Salunkhe", "departmentId": "ORTH-MUM", "fee": 1500 },
+    { "id": "D005", "doc_name": "Dr. Shah", "departmentId": "DERM-MUM", "fee": 900 },
+    { "id": "D006", "doc_name": "Dr. Naik", "departmentId": "GAST-BLR", "fee": 1300 },
+    { "id": "D007", "doc_name": "Dr. Jadhav", "departmentId": "ENT-BLR", "fee": 1100 },
+    { "id": "D008", "doc_name": "Dr. Cooper", "departmentId": "CARD-SFO", "fee": 2200 },
+    { "id": "D009", "doc_name": "Dr. Adams", "departmentId": "NEUR-AUS", "fee": 2400 }
+  ],
+  "slots": [
+    { "id": "S1", "time": "09:00 AM", "doctorId": "D001" },
+    { "id": "S2", "time": "10:00 AM", "doctorId": "D001" },
+    { "id": "S3", "time": "11:30 AM", "doctorId": "D003" },
+    { "id": "S4", "time": "02:00 PM", "doctorId": "D004" },
+    { "id": "S5", "time": "04:00 PM", "doctorId": "D006" },
+    { "id": "S6", "time": "05:30 PM", "doctorId": "D008" }
+  ],
+  "labs": [
+    { "id": "LAB-PUNE-1", "name": "Prime Diagnostics Pune", "hospitalId": "HSP-PUNE-1" },
+    { "id": "LAB-MUM-1", "name": "Metro Labs Mumbai", "hospitalId": "HSP-MUM-1" },
+    { "id": "LAB-BLR-1", "name": "City Labs Bengaluru", "hospitalId": "HSP-BLR-1" },
+    { "id": "LAB-SFO-1", "name": "Bay Labs", "hospitalId": "HSP-SFO-1" }
+  ],
+  "testPackages": [
+    { "id": "TP1", "name": "Basic Blood Panel", "labId": "LAB-PUNE-1", "price": 1200 },
+    { "id": "TP2", "name": "Cardiac Profile", "labId": "LAB-PUNE-1", "price": 2600 },
+    { "id": "TP3", "name": "Thyroid Profile", "labId": "LAB-MUM-1", "price": 1800 },
+    { "id": "TP4", "name": "Liver Function Test", "labId": "LAB-BLR-1", "price": 2100 },
+    { "id": "TP5", "name": "Advanced Wellness", "labId": "LAB-SFO-1", "price": 4200 }
+  ],
+  "medications": [
+    { "id": "M1", "name": "CardioSafe", "departmentId": "CARD-PUNE", "price": 850 },
+    { "id": "M2", "name": "NeuroCalm", "departmentId": "NEUR-PUNE", "price": 950 },
+    { "id": "M3", "name": "OrthoRelief", "departmentId": "ORTH-MUM", "price": 700 },
+    { "id": "M4", "name": "DermaCare", "departmentId": "DERM-MUM", "price": 500 },
+    { "id": "M5", "name": "GastroEase", "departmentId": "GAST-BLR", "price": 650 },
+    { "id": "M6", "name": "ENTClear", "departmentId": "ENT-BLR", "price": 480 },
+    { "id": "M7", "name": "CardioMax", "departmentId": "CARD-SFO", "price": 1100 },
+    { "id": "M8", "name": "NeuroShield", "departmentId": "NEUR-AUS", "price": 1300 }
+  ],
+  "insurances": [
+    { "id": "I1", "plan": "GOLD", "coverPercent": 70 },
+    { "id": "I2", "plan": "SILVER", "coverPercent": 50 },
+    { "id": "I3", "plan": "PLATINUM", "coverPercent": 85 }
+  ]
+}

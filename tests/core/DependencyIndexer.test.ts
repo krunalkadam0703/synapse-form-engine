@@ -20,4 +20,38 @@ describe('DependencyIndexer Intelligence', () => {
     // Changing height should trigger BMI
     expect(map['height']).toContainEqual({ targetFieldId: 'bmi', type: 'calculation' });
   });
+
+  it('should index API dependencies from queryParams (multi) and queryParam (legacy)', () => {
+    const fields: IFieldConfig[] = [
+      {
+        id: 'city',
+        type: 'select',
+        label: 'City',
+        remoteSource: {
+          url: '/api/cities',
+          method: 'GET',
+          queryParams: {
+            countryId: 'country',
+            stateId: 'state',
+          },
+        },
+      },
+      {
+        id: 'zip',
+        type: 'text',
+        label: 'Zip',
+        remoteSource: {
+          url: '/api/zip',
+          method: 'GET',
+          queryParam: 'city',
+        },
+      },
+    ];
+
+    const map = DependencyIndexer.build(fields);
+
+    expect(map['country']).toContainEqual({ targetFieldId: 'city', type: 'api' });
+    expect(map['state']).toContainEqual({ targetFieldId: 'city', type: 'api' });
+    expect(map['city']).toContainEqual({ targetFieldId: 'zip', type: 'api' });
+  });
 });
