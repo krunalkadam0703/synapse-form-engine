@@ -2,6 +2,26 @@
   "name": "synapse-form-engine",
   "version": "1.0.0",
   "description": "Reactive headless form engine for React. Model-driven logic, automated dependency indexing, and surgical re-rendering for high-concurrency enterprise modules.",
+  "type": "module",
+  "main": "./dist/index.cjs",
+  "module": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.js",
+      "require": "./dist/index.cjs",
+      "default": "./dist/index.js"
+    }
+  },
+  "files": [
+    "dist"
+  ],
+  "scripts": {
+    "build": "tsup src/index.ts --format cjs,esm --dts --clean",
+    "dev": "tsup src/index.ts --format cjs,esm --watch --dts",
+    "test": "vitest"
+  },
   "homepage": "https://github.com/krunalkadam0703/synapse-form-engine#readme",
   "bugs": {
     "url": "https://github.com/krunalkadam0703/synapse-form-engine/issues"
@@ -12,13 +32,6 @@
   },
   "license": "ISC",
   "author": "krunal kadam",
-  "type": "module",
-  "main": "index.js",
-  "scripts": {
-    "build": "tsup",
-    "dev": "tsup --watch",
-    "test": "vitest"
-  },
   "devDependencies": {
     "@types/node": "^22.0.0",
     "@types/react": "^18.0.0",

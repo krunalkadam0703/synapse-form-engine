@@ -14,8 +14,10 @@ export class EffectHandler {
   ) {
     return Broker.subscribe('field:change', ({ fieldId, value }) => {
       const dependents = map[fieldId];
+      console.log("dependents", dependents);
 
       if (dependents && dependents.length > 0) {
+        debugger;
         dependents.forEach((dep) => {
           const targetField = config.fields.find((f) => f.id === dep.targetFieldId);
           if (!targetField) return;
@@ -47,9 +49,8 @@ export class EffectHandler {
 
           // 🔹 API FETCH TRIGGER
           if (dep.type === 'api') {
-            Broker.emit('api:fetch', { 
-              fetcherId: dep.targetFieldId, 
-              params: { ...globalContext, [fieldId]: value } 
+            Broker.emit(`api:fetch:${dep.targetFieldId}`, {
+              triggerValue: value
             });
           }
         });

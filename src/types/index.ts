@@ -1,4 +1,4 @@
-import React from 'react';
+
 
 /**
  * 1. Validation Logic
@@ -34,14 +34,14 @@ export interface IFieldCalculation {
 export interface IRemoteSource {
   url: string;
   method: 'GET' | 'POST';
-  /** * The ID of the field whose value should be sent as a parameter.
-   * Example: 'departmentId'
-   */
+  // 🔹 Ensure this is plural and defined as a Record
+  queryParams?: Record<string, string>; 
+  dataKey?: string;
+  labelKey?: string;
+  valueKey?: string;
+  onSuccess?: Record<string, string>;
+  // Keep this if you want backward compatibility, or remove it to force the new way
   queryParam?: string; 
-  /** * The key in the JSON response containing the data.
-   * Example: 'results' or 'data'
-   */
-  dataKey?: string;    
 }
 
 /**
